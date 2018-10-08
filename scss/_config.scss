@@ -1,4 +1,4 @@
-$primary-color: #333;
+$primary-color: #444;
 $secondary-color:rgb(238, 84, 200);
 $show-home-image: true;
 $home-image: url('../img/bg.jpg');
@@ -31,7 +31,15 @@ $background-opacity:0.5;
 }
 }
 
+// set text color 
 
+@function set-text-color($color) {
+    @if (lightness($color) > 40) {
+        @return #000;
+    } @else {
+        @return #fff;
+    }
+}
 // meedia query mixin 
 
 @mixin  mediaSm {
